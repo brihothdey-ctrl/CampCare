@@ -1,0 +1,150 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&family=Playfair+Display:ital,wght@0,600;0,700;0,800;1,600&display=swap');
+
+:root {
+  --bg-main: #0a0a0f;
+  --bg-secondary: #0b0b12;
+  --bg-card: #111117;
+  --bg-card-hover: #14141c;
+  --bg-sidebar: #0d0d13;
+  --border-color: rgba(255, 255, 255, 0.08);
+  --border-accent: rgba(108, 108, 229, 0.3);
+  --accent-color: #6C6CE5;
+  --accent-hover: #7C7CF0;
+  --accent-tint: rgba(108, 108, 229, 0.12);
+  --text-primary: #ffffff;
+  --text-secondary: #94a3b8;
+}
+
+.light-theme {
+  --bg-main: #f8fafc;
+  --bg-secondary: #f1f5f9;
+  --bg-card: #ffffff;
+  --bg-card-hover: #f8fafc;
+  --bg-sidebar: #0f172a;
+  --border-color: rgba(0, 0, 0, 0.08);
+  --border-accent: rgba(108, 108, 229, 0.3);
+  --accent-color: #5B5BD6;
+  --accent-hover: #4C4CBF;
+  --accent-tint: rgba(108, 108, 229, 0.1);
+  --text-primary: #0f172a;
+  --text-secondary: #64748b;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  background-color: var(--bg-main);
+  color: var(--text-primary);
+  font-family: 'Inter', sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.3s ease, color 0.3s ease;
+}
+
+/* Custom Scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-main);
+}
+
+::-webkit-scrollbar-thumb {
+  background: #22222c;
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-color);
+}
+
+/* Typography Utilities */
+.font-serif {
+  font-family: 'Playfair Display', Georgia, serif;
+}
+
+.font-sans {
+  font-family: 'Inter', sans-serif;
+}
+
+/* Glassmorphism & Borders */
+.glass-card {
+  background-color: var(--bg-card);
+  border: 1px solid var(--border-color);
+  backdrop-filter: blur(12px);
+  border-radius: 16px;
+  transition: all 0.25s ease;
+}
+
+.glass-card:hover {
+  border-color: rgba(108, 108, 229, 0.25);
+  box-shadow: 0 10px 30px -10px rgba(108, 108, 229, 0.15);
+}
+
+/* Glow effects */
+.glow-accent {
+  box-shadow: 0 0 25px rgba(108, 108, 229, 0.25);
+}
+
+.glow-accent-lg {
+  box-shadow: 0 0 50px rgba(108, 108, 229, 0.3);
+}
+
+/* Keyframe animations */
+@keyframes floatSlow {
+  0%, 100% { transform: translateY(0px); }
+  50% { transform: translateY(-8px); }
+}
+
+@keyframes bounceSlow {
+  0%, 100% { transform: translateY(0); }
+  50% { transform: translateY(6px); }
+}
+
+@keyframes pulseGlow {
+  0%, 100% { opacity: 0.4; transform: scale(1); }
+  50% { opacity: 0.8; transform: scale(1.03); }
+}
+
+.animate-float {
+  animation: floatSlow 4s ease-in-out infinite;
+}
+
+.animate-bounce-slow {
+  animation: bounceSlow 2s ease-in-out infinite;
+}
+
+.animate-pulse-glow {
+  animation: pulseGlow 3s ease-in-out infinite;
+}
+
+/* Status Pill Badges */
+.status-pill-pending {
+  background-color: rgba(59, 130, 246, 0.12);
+  color: #60a5fa;
+  border: 1px solid rgba(59, 130, 246, 0.25);
+}
+
+.status-pill-in-progress {
+  background-color: rgba(249, 115, 22, 0.12);
+  color: #fb923c;
+  border: 1px solid rgba(249, 115, 22, 0.25);
+}
+
+.status-pill-resolved {
+  background-color: rgba(16, 185, 129, 0.12);
+  color: #34d399;
+  border: 1px solid rgba(16, 185, 129, 0.25);
+}
+
+.status-pill-high-priority {
+  background-color: rgba(239, 68, 68, 0.12);
+  color: #f87171;
+  border: 1px solid rgba(239, 68, 68, 0.25);
+}
+
+/* Custom Checkbox/Radio */
+input[type="checkbox"], input[type="radio"] {
+  accent-color: #6C6CE5;
+}
